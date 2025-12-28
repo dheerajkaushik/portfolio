@@ -1,65 +1,80 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Github, FileText, Terminal } from "lucide-react";
+import { personalInfo } from "@/lib/data";
+import Typewriter from "@/components/ui/Typewriter";
+import { Meteors } from "@/components/ui/Meteors";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-[85vh] flex flex-col justify-center items-center px-4 relative overflow-hidden">
+      <div className="absolute inset-0 h-full w-full pointer-events-none">
+               <Meteors number={20} />
+            </div>
+      <div className="max-w-3xl w-full space-y-8 relative z-10">
+
+        {/* Terminal Header */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-800 bg-slate-950/50 text-xs font-mono text-emerald-400 mb-4">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          System Online
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+          <span className="text-slate-500 text-2xl md:text-2xl block mb-4 font-mono font-normal">
+            &gt; Hello, I'm
+          </span>
+          <Typewriter text="Dheeraj Kaushik" delay={100} />
+        </h1>
+
+        <p className="text-xl text-slate-400 max-w-xl leading-relaxed">
+          {personalInfo.role} specializing in <span className="text-sky-400 font-mono">Spring Boot</span> and <span className="text-sky-400 font-mono">React</span>.
+          <br/>
+          {personalInfo.bio}
+        </p>
+
+        <div className="flex flex-wrap gap-2 pt-2">
+          <Link
+            href="/projects"
+            className="group flex items-center gap-2 px-6 py-3 bg-white text-black rounded-lg font-medium hover:bg-slate-200 transition-all"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
+            View Projects
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href={personalInfo.github}
             target="_blank"
-            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-6 py-3 border border-slate-700 rounded-lg font-medium text-slate-300 hover:border-slate-500 hover:bg-slate-800/50 transition-all"
           >
-            Documentation
+            <Github className="w-4 h-4" />
+            GitHub
           </a>
+
+          {/* Resume Download Mockup */}
+          <button className="flex items-center gap-2 px-6 py-3 border border-slate-700 rounded-lg font-medium text-slate-300 hover:border-slate-500 hover:bg-slate-800/50 transition-all">
+            <FileText className="w-4 h-4" />
+            Download CV
+          </button>
         </div>
-      </main>
+
+        {/* Tech Stack Ticker */}
+        <div className="pt-5 border-t border-slate-800/50">
+          <p className="text-sm text-slate-500 font-mono mb-3">CORE STACK_</p>
+          <div className="flex gap-6 text-slate-400 overflow-x-auto pb-2">
+             <Terminal size={20} /> <span className="font-mono">Java</span>
+             <span className="text-slate-600">|</span>
+             <span className="font-mono">Spring Boot</span>
+             <span className="text-slate-700">|</span>
+             <span className="font-mono">React</span>
+             <span className="text-slate-700">|</span>
+             <span className="font-mono">Docker</span>
+             <span className="text-slate-700">|</span>
+             <span className="font-mono">PostgreSQL</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
