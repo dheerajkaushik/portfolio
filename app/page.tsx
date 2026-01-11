@@ -3,6 +3,7 @@ import { ArrowRight, Github, FileText, Terminal } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 import Typewriter from "@/components/ui/Typewriter";
 import { Meteors } from "@/components/ui/Meteors";
+import resumeFile from '../public/Fullstack_Resume.pdf';
 
 export default function Home() {
   return (
@@ -53,7 +54,7 @@ export default function Home() {
           </a>
 
           {/* Resume Download Mockup */}
-          <a href="/Fullstack Resume.pdf" download="My_Resume.pdf">
+          <a href={resumeFile} download="My_Resume.pdf">
           <button className="flex items-center gap-2 px-6 py-3 border border-slate-700 rounded-lg font-medium text-slate-300 hover:border-slate-500 hover:bg-slate-800/50 transition-all">
             <FileText className="w-4 h-4" />
             Download CV
