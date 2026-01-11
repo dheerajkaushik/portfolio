@@ -40,6 +40,27 @@ export const projects = [
     ]
   },
   {
+      title: "Syncboard",
+      description: "SyncBoard is a real-time collaborative whiteboard that allows distributed teams to sketch ideas on a shared canvas",
+      tech: ["HTML5 Canvas API","SockJS, STOMP Client (WebSockets)","Spring Boot","React.js"],
+      github: "https://github.com/dheerajkaushik/Syncboard",
+      live: "https://syncboard-1.onrender.com/",
+      feature: [
+          "Live Multi-User Drawing",
+          "Conflict-Free State"
+
+          ]
+      },
+
+  {
+      title: "Streamscale",
+      description: "StreamScale is a high-concurrency e-commerce engine designed to handle massive traffic spikes using an Event-Driven Microservices Architecture",
+      tech: ["Spring Boot","Apache Kafka","PostgreSQL","React.js"," Docker"],
+      github: "https://github.com/dheerajkaushik/stream-scale",
+
+      },
+
+  {
     title: "Real-Time Chat Platform",
     description: "Low-latency messaging platform supporting multiple rooms and live bi-directional communication.",
     tech: ["HTML/CSS", "JavaScript", "WebSocket API"],
