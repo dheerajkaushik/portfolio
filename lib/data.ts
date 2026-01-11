@@ -45,7 +45,7 @@ export const projects = [
       tech: ["HTML5 Canvas API","SockJS, STOMP Client (WebSockets)","Spring Boot","React.js"],
       github: "https://github.com/dheerajkaushik/Syncboard",
       live: "https://syncboard-1.onrender.com/",
-      feature: [
+      features: [
           "Live Multi-User Drawing",
           "Conflict-Free State"
 
@@ -57,7 +57,7 @@ export const projects = [
       description: "StreamScale is a high-concurrency e-commerce engine designed to handle massive traffic spikes using an Event-Driven Microservices Architecture",
       tech: ["Spring Boot","Apache Kafka","PostgreSQL","React.js"," Docker"],
       github: "https://github.com/dheerajkaushik/stream-scale",
-      feature: [
+      features: [
           "Saga Pattern (Orchestration) to manage distributed transactions across services"
 
           ]
