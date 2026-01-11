@@ -57,6 +57,10 @@ export const projects = [
       description: "StreamScale is a high-concurrency e-commerce engine designed to handle massive traffic spikes using an Event-Driven Microservices Architecture",
       tech: ["Spring Boot","Apache Kafka","PostgreSQL","React.js"," Docker"],
       github: "https://github.com/dheerajkaushik/stream-scale",
+      feature: [
+          "Saga Pattern (Orchestration) to manage distributed transactions across services"
+
+          ]
 
       },
 
