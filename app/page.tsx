@@ -53,10 +53,12 @@ export default function Home() {
           </a>
 
           {/* Resume Download Mockup */}
+          <a href="../Resume/Fullstack Resume.pdf" download>
           <button className="flex items-center gap-2 px-6 py-3 border border-slate-700 rounded-lg font-medium text-slate-300 hover:border-slate-500 hover:bg-slate-800/50 transition-all">
             <FileText className="w-4 h-4" />
             Download CV
           </button>
+          </a>
         </div>
 
         {/* Tech Stack Ticker */}
